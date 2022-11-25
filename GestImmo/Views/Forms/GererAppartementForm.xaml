@@ -9,36 +9,54 @@
       "
       Title="GererAppartementForm">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
-        <TextBox x:Name="NomBien_TextBox" HorizontalAlignment="Left" Margin="140,7,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="27"/>
-        <TextBox x:Name="ValeurBien_TextBox" HorizontalAlignment="Left" Margin="140,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="26"/>
-        <TextBox x:Name="AdresseBien_TextBox" HorizontalAlignment="Left" Margin="140,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="SurfaceBien_TextBox" HorizontalAlignment="Left" Margin="140,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="ChambresBien_TextBox" HorizontalAlignment="Left" Margin="140,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="PiecesBien_TextBox" HorizontalAlignment="Left" Margin="140,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="Etage_Textbox" HorizontalAlignment="Left" Margin="140,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="Ascenseur_TextBox" HorizontalAlignment="Left" Margin="140,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="Chauffage_TextBox" HorizontalAlignment="Left" Margin="140,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="Parking_TextBox" HorizontalAlignment="Left" Margin="140,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
-        <TextBox x:Name="Cave_TextBox" HorizontalAlignment="Left" Margin="140,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"  Height="26"/>
+	<Grid Margin="15,15,15,15">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100"></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
 
+		<TextBox x:Name="NomBien_TextBox" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="ValeurBien_TextBox"  Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="AdresseBien_TextBox" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="SurfaceBien_TextBox" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="PiecesBien_TextBox" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="ChambresBien_TextBox"  Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="Etage_Textbox" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Ascenseur_TextBox" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Chauffage_TextBox" Grid.Row="8" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="Cave_TextBox"  Grid.Row="9" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+		<TextBox x:Name="Parking_TextBox"  Grid.Row="10" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
 
-        <Label x:Name="Lbl_NomBien" Content="Nom" HorizontalAlignment="Left" Margin="73,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="36"/>
-        <Label x:Name="Lbl_ValeurBien" Content="Valeur" HorizontalAlignment="Left" Margin="70,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="43"/>
-        <Label x:Name="Lbl_AdresseBien" Content="Adresse" HorizontalAlignment="Left" Margin="61,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="52"/>
-        <Label x:Name="Lbl_SurfaceBien" Content="Surface(m2)" HorizontalAlignment="Left" Margin="50,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="73"/>
-        <Label x:Name="Lbl_Chambres" Content="Chambres" HorizontalAlignment="Left" Margin="60,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="63"/>
-        <Label x:Name="Lbl_Pieces" Content="Pieces" HorizontalAlignment="Left" Margin="67,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="43"/>
-        <Label x:Name="Lbl_EtageAppartement" Content="Etage" HorizontalAlignment="Left" Margin="66,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="40"/>
-        <Label x:Name="Lbl_AscenseurAppartement" Content="Ascenseur" HorizontalAlignment="Left" Margin="57,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="64"/>
-        <Label x:Name="Lbl_ChauffageBien" Content="Chauffage" HorizontalAlignment="Left" Margin="61,212,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="64"/>
-        <Button x:Name="Bouton_Ajouter_Bien" Content="Button" Margin="140,310,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="182" Click="Bouton_Ajouter_Bien_Click"/>
-        <Label x:Name="Lbl_ParkingBien" Content="Parking" HorizontalAlignment="Left" Margin="61,238,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="49"/>
-        <Label x:Name="Lbl_CaveBien" Content="Cave" HorizontalAlignment="Left" Margin="61,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.597,0.432" Height="26" Width="36"/>
+		<Label x:Name="Lbl_NomBien" Content="Nom"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+		<Label x:Name="Lbl_ValeurBien" Content="Valeur" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_AdresseBien" Content="Adresse"  Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_SurfaceBien" Content="Surface(m2)" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_NbPieces" Content="Nombre de pièces"  Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_NbChambre" Content="Nombre de chambres" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_EtageAppartement" Content="Etage" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_AscenseurAppartement" Content="Ascenseur" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_ChauffageBien" Content="Chauffage" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_Cave" Content="Cave"  Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"/>
+		<Label x:Name="Lbl_Parking" Content="Place de parking"  Grid.Row="10" Grid.Column="0" VerticalAlignment="Center"/>
+
+		<Button x:Name="Bouton_Ajouter_Bien" Content="Button" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Click="Bouton_Ajouter_Bien_Click"/>
+
+		
+		
 
 
 

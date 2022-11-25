@@ -12,38 +12,6 @@ namespace GestImmo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Bien",
-                columns: table => new
-                {
-                    BienId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    NomBien = table.Column<string>(type: "text", nullable: false),
-                    Valeur = table.Column<int>(type: "integer", nullable: false),
-                    Surface = table.Column<int>(type: "integer", nullable: false),
-                    Adresse = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Bien", x => x.BienId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Locataire",
-                columns: table => new
-                {
-                    LocataireId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false),
-                    Prenom = table.Column<string>(type: "text", nullable: false),
-                    Age = table.Column<int>(type: "integer", nullable: false),
-                    Profession = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Locataire", x => x.LocataireId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Prestataire",
                 columns: table => new
                 {
@@ -77,6 +45,29 @@ namespace GestImmo.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Bien",
+                columns: table => new
+                {
+                    BienId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    NomBien = table.Column<string>(type: "text", nullable: false),
+                    Valeur = table.Column<int>(type: "integer", nullable: false),
+                    Surface = table.Column<int>(type: "integer", nullable: false),
+                    Adresse = table.Column<string>(type: "text", nullable: false),
+                    PretId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bien", x => x.BienId);
+                    table.ForeignKey(
+                        name: "FK_Bien_Pret_PretId",
+                        column: x => x.PretId,
+                        principalTable: "Pret",
+                        principalColumn: "PretId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Box",
                 columns: table => new
                 {
@@ -103,7 +94,7 @@ namespace GestImmo.Migrations
                     CoutLoyer = table.Column<int>(type: "integer", nullable: false),
                     DateDebut = table.Column<string>(type: "text", nullable: false),
                     DateFin = table.Column<string>(type: "text", nullable: false),
-                    BienId = table.Column<int>(type: "integer", nullable: true)
+                    BienId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,7 +103,8 @@ namespace GestImmo.Migrations
                         name: "FK_Contrat_Bien_BienId",
                         column: x => x.BienId,
                         principalTable: "Bien",
-                        principalColumn: "BienId");
+                        principalColumn: "BienId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -121,10 +113,10 @@ namespace GestImmo.Migrations
                 {
                     InterventionId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    BienId = table.Column<int>(type: "integer", nullable: true),
                     DateIntervention = table.Column<string>(type: "text", nullable: false),
                     MontantTTC = table.Column<int>(type: "integer", nullable: false),
-                    Information = table.Column<string>(type: "text", nullable: false),
-                    BienId = table.Column<int>(type: "integer", nullable: true)
+                    Information = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -159,14 +151,60 @@ namespace GestImmo.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Locataire",
+                columns: table => new
+                {
+                    LocataireId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Nom = table.Column<string>(type: "text", nullable: false),
+                    Prenom = table.Column<string>(type: "text", nullable: false),
+                    Age = table.Column<int>(type: "integer", nullable: false),
+                    Profession = table.Column<string>(type: "text", nullable: false),
+                    ContratId = table.Column<int>(type: "integer", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Locataire", x => x.LocataireId);
+                    table.ForeignKey(
+                        name: "FK_Locataire_Contrat_ContratId",
+                        column: x => x.ContratId,
+                        principalTable: "Contrat",
+                        principalColumn: "ContratId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "InterventionPrestataire",
+                columns: table => new
+                {
+                    InterventionsInterventionId = table.Column<int>(type: "integer", nullable: false),
+                    PrestatairesPrestataireId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InterventionPrestataire", x => new { x.InterventionsInterventionId, x.PrestatairesPrestataireId });
+                    table.ForeignKey(
+                        name: "FK_InterventionPrestataire_Intervention_InterventionsIntervent~",
+                        column: x => x.InterventionsInterventionId,
+                        principalTable: "Intervention",
+                        principalColumn: "InterventionId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_InterventionPrestataire_Prestataire_PrestatairesPrestataire~",
+                        column: x => x.PrestatairesPrestataireId,
+                        principalTable: "Prestataire",
+                        principalColumn: "PrestataireId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Appartement",
                 columns: table => new
                 {
                     BienId = table.Column<int>(type: "integer", nullable: false),
                     AppartementId = table.Column<int>(type: "integer", nullable: false),
                     Etage = table.Column<int>(type: "integer", nullable: false),
-                    Ascenseur = table.Column<bool>(type: "boolean", nullable: false),
-                    Chauffage = table.Column<bool>(type: "boolean", nullable: false)
+                    Ascenseur = table.Column<string>(type: "text", nullable: false),
+                    Chauffage = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -198,6 +236,11 @@ namespace GestImmo.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Bien_PretId",
+                table: "Bien",
+                column: "PretId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Contrat_BienId",
                 table: "Contrat",
                 column: "BienId");
@@ -206,6 +249,16 @@ namespace GestImmo.Migrations
                 name: "IX_Intervention_BienId",
                 table: "Intervention",
                 column: "BienId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InterventionPrestataire_PrestatairesPrestataireId",
+                table: "InterventionPrestataire",
+                column: "PrestatairesPrestataireId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Locataire_ContratId",
+                table: "Locataire",
+                column: "ContratId");
         }
 
         /// <inheritdoc />
@@ -218,10 +271,7 @@ namespace GestImmo.Migrations
                 name: "Box");
 
             migrationBuilder.DropTable(
-                name: "Contrat");
-
-            migrationBuilder.DropTable(
-                name: "Intervention");
+                name: "InterventionPrestataire");
 
             migrationBuilder.DropTable(
                 name: "Locataire");
@@ -230,16 +280,22 @@ namespace GestImmo.Migrations
                 name: "Maison");
 
             migrationBuilder.DropTable(
+                name: "Intervention");
+
+            migrationBuilder.DropTable(
                 name: "Prestataire");
 
             migrationBuilder.DropTable(
-                name: "Pret");
+                name: "Contrat");
 
             migrationBuilder.DropTable(
                 name: "Logement");
 
             migrationBuilder.DropTable(
                 name: "Bien");
+
+            migrationBuilder.DropTable(
+                name: "Pret");
         }
     }
 }

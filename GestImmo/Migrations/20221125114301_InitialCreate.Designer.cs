@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GestImmo.Migrations
 {
     [DbContext(typeof(ImmoContext))]
-    [Migration("20221123161314_InitialCreate")]
+    [Migration("20221125114301_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -41,6 +41,9 @@ namespace GestImmo.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("PretId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Surface")
                         .HasColumnType("integer");
 
@@ -48,6 +51,8 @@ namespace GestImmo.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("BienId");
+
+                    b.HasIndex("PretId");
 
                     b.ToTable("Bien");
 
@@ -62,7 +67,7 @@ namespace GestImmo.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ContratId"));
 
-                    b.Property<int?>("BienId")
+                    b.Property<int>("BienId")
                         .HasColumnType("integer");
 
                     b.Property<int>("CoutLoyer")
@@ -123,6 +128,9 @@ namespace GestImmo.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("ContratId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("text");
@@ -136,6 +144,8 @@ namespace GestImmo.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("LocataireId");
+
+                    b.HasIndex("ContratId");
 
                     b.ToTable("Locataire");
                 });
@@ -199,6 +209,21 @@ namespace GestImmo.Migrations
                     b.ToTable("Pret");
                 });
 
+            modelBuilder.Entity("InterventionPrestataire", b =>
+                {
+                    b.Property<int>("InterventionsInterventionId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PrestatairesPrestataireId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("InterventionsInterventionId", "PrestatairesPrestataireId");
+
+                    b.HasIndex("PrestatairesPrestataireId");
+
+                    b.ToTable("InterventionPrestataire");
+                });
+
             modelBuilder.Entity("GestImmo.Models.Box", b =>
                 {
                     b.HasBaseType("GestImmo.Models.Bien");
@@ -238,11 +263,13 @@ namespace GestImmo.Migrations
                     b.Property<int>("AppartementId")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("Ascenseur")
-                        .HasColumnType("boolean");
+                    b.Property<string>("Ascenseur")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<bool>("Chauffage")
-                        .HasColumnType("boolean");
+                    b.Property<string>("Chauffage")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("Etage")
                         .HasColumnType("integer");
@@ -260,18 +287,57 @@ namespace GestImmo.Migrations
                     b.ToTable("Maison", (string)null);
                 });
 
+            modelBuilder.Entity("GestImmo.Models.Bien", b =>
+                {
+                    b.HasOne("GestImmo.Models.Pret", "Pret")
+                        .WithMany()
+                        .HasForeignKey("PretId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pret");
+                });
+
             modelBuilder.Entity("GestImmo.Models.Contrat", b =>
                 {
-                    b.HasOne("GestImmo.Models.Bien", null)
+                    b.HasOne("GestImmo.Models.Bien", "Bien")
                         .WithMany("ListeContrat")
-                        .HasForeignKey("BienId");
+                        .HasForeignKey("BienId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Bien");
                 });
 
             modelBuilder.Entity("GestImmo.Models.Intervention", b =>
                 {
-                    b.HasOne("GestImmo.Models.Bien", null)
+                    b.HasOne("GestImmo.Models.Bien", "bien")
                         .WithMany("ListeIntervention")
                         .HasForeignKey("BienId");
+
+                    b.Navigation("bien");
+                });
+
+            modelBuilder.Entity("GestImmo.Models.Locataire", b =>
+                {
+                    b.HasOne("GestImmo.Models.Contrat", null)
+                        .WithMany("ListeLocataire")
+                        .HasForeignKey("ContratId");
+                });
+
+            modelBuilder.Entity("InterventionPrestataire", b =>
+                {
+                    b.HasOne("GestImmo.Models.Intervention", null)
+                        .WithMany()
+                        .HasForeignKey("InterventionsInterventionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GestImmo.Models.Prestataire", null)
+                        .WithMany()
+                        .HasForeignKey("PrestatairesPrestataireId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GestImmo.Models.Box", b =>
@@ -315,6 +381,11 @@ namespace GestImmo.Migrations
                     b.Navigation("ListeContrat");
 
                     b.Navigation("ListeIntervention");
+                });
+
+            modelBuilder.Entity("GestImmo.Models.Contrat", b =>
+                {
+                    b.Navigation("ListeLocataire");
                 });
 #pragma warning restore 612, 618
         }

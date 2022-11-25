@@ -8,11 +8,12 @@ namespace GestImmo.Models
 {
     public class Locataire
     {
-        public int LocataireId { get; set; }
+
         private string nom;
         private string prenom;
         private int age;
         private string profession;
+        private Contrat Contrat;
 
         public Locataire(string nom, string prenom, int age, string profession)
         {
@@ -21,6 +22,8 @@ namespace GestImmo.Models
             this.age = age;
             this.profession = profession;
         }
+
+        public int LocataireId { get; set; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public int Age { get => age; set => age = value; }
