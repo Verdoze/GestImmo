@@ -1,0 +1,8 @@
+2022-12-05 11:40:13.389 +01:00 [INF] Bienvenue dans la LOG ZONE
+2022-12-05 11:40:14.470 +01:00 [VRB] Changement de page vers Pret
+2022-12-05 11:40:14.901 +01:00 [DBG] Connexion à la base de données établie
+2022-12-05 11:40:16.940 +01:00 [VRB] Changement de page vers Bien
+2022-12-05 11:40:19.379 +01:00 [VRB] Changement de page vers Prestataire
+2022-12-05 11:40:22.675 +01:00 [DBG] Connexion à la base de données établie
+2022-12-05 11:40:22.680 +01:00 [VRB] Changement de page vers Bien
+2022-12-05 11:40:23.204 +01:00 [VRB] Changement de page vers Pret
