@@ -1,5 +1,6 @@
 ﻿using GestImmo.Data.DAL;
 using GestImmo.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace GestImmo.Views.Forms
 
             if (NomBien_TextBox.Text != "" && ValeurBien_TextBox.Text!= "" && AdresseBien_TextBox.Text !="" && SurfaceBien_TextBox.Text != "" && Etage_Textbox.Text !="" && ChambresBien_TextBox.Text!= "" && PiecesBien_TextBox.Text != "" && Ascenseur_TextBox.Text != "" && Chauffage_TextBox.Text != "" && Parking_TextBox.Text != "" && Cave_TextBox.Text!= "")
             {
+                Log.Logger.Verbose("Entrée dans la fonction de création d'appartement");
                 string nom = NomBien_TextBox.Text;
                 int valeur = int.Parse(ValeurBien_TextBox.Text);
                 string adresse = AdresseBien_TextBox.Text;
@@ -61,6 +63,8 @@ namespace GestImmo.Views.Forms
                 ImmoContext ctx = ImmoContext.getInstance();
                 ctx.Bien.Add(unAppartement);
                 ctx.SaveChanges();
+                MessageBox.Show("Ajouté avec succès");
+                Log.Logger.Information("Ajout de l'appartement : " + nom + "-" + adresse);
             }
             else
             {

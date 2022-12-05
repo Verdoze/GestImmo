@@ -1,5 +1,6 @@
 ﻿using GestImmo.Data.DAL;
 using GestImmo.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace GestImmo.Views.Forms
         {
             if (NomBien_TextBox.Text != "" && ValeurBien_TextBox.Text != "" && AdresseBien_TextBox.Text != "" && SurfaceBien_TextBox.Text != "" && ChambresBien_TextBox.Text != "" && PiecesBien_TextBox.Text != "" && Parking_TextBox.Text != "" && Cave_TextBox.Text != "")
             {
+                Log.Logger.Verbose("Entrée dans la fonction de création d'une maison");
                 string nom = NomBien_TextBox.Text;
                 int valeur = int.Parse(ValeurBien_TextBox.Text);
                 string adresse = AdresseBien_TextBox.Text;
@@ -40,21 +42,12 @@ namespace GestImmo.Views.Forms
                 int cave = int.Parse(Cave_TextBox.Text);
                 int parking = int.Parse(Parking_TextBox.Text);
 
-                /*bool chauffage = false;
-                if (Chauffage_TextBox.Text == 1)
-                {
-                    chauffage = true;
-                }
-                bool ascenseur = false;
-                if (Ascenseur_TextBox.Text == 1)
-                {
-                    ascenseur = true;
-                }*/
-
                 Maison uneMaison = new Maison(nom, valeur, surface, adresse, null, null, null, nbPieces, nbChambres, cave, parking);
                 ImmoContext ctx = ImmoContext.getInstance();
                 ctx.Bien.Add(uneMaison);
                 ctx.SaveChanges();
+                MessageBox.Show("Ajouté avec succès");
+                Log.Logger.Information("Ajout de la maison : " + nom +"-" + adresse);
             }
             else
             {

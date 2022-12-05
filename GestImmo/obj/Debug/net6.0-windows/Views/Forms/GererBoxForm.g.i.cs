@@ -133,7 +133,7 @@ namespace GestImmo.Views.Forms {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestImmo;V1.0.0.0;component/views/forms/gererboxform.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestImmo;component/views/forms/gererboxform.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Forms\GererBoxForm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

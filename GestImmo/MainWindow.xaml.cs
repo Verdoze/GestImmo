@@ -16,7 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Serilog;
+using System.Diagnostics.Eventing.Reader;
 
 namespace GestImmo
 {
@@ -26,12 +27,19 @@ namespace GestImmo
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {            
+        {
             InitializeComponent();
             this.Content = new NavigationView();
 
             ImmoContext ImmoContext = new ImmoContext();
             ImmoContext ctx = ImmoContext.getInstance();
+
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Verbose()
+                                                    .WriteTo.File("../../../../logs.txt")
+                                                    .WriteTo.Console(restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Debug)
+                                                    .CreateLogger();
+            Log.Logger.Information("Bienvenue dans la LOG ZONE");
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GestImmo.Views.SubViews;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,22 +26,26 @@ namespace GestImmo.Views
         {
             InitializeComponent();
             this.MainFrame.Navigate(new HomeView());
-            
+            Log.Logger.Verbose("Changement de page vers Menu");
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             this.MainFrame.Navigate(new BienView());
+            Log.Logger.Verbose("Changement de page vers Bien");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.MainFrame.Navigate(new PretView());
+            Log.Logger.Verbose("Changement de page vers Pret");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.MainFrame.Navigate(new PrestataireView());
+            Log.Logger.Verbose("Changement de page vers Prestataire");
         }
     }
 }

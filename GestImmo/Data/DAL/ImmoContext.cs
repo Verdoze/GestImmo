@@ -2,13 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using GestImmo.Models;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Serilog;
 
 namespace GestImmo.Data.DAL
 {
     public class ImmoContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=GestImmo;Username=postgres;Password=SmvTmjsunp7");
+        => optionsBuilder.UseNpgsql("Host=localhost;Database=GestImmo;Username=postgres;Password=root");
 
         public DbSet<Contrat> Contrat { get; set; }
 
@@ -40,8 +41,8 @@ namespace GestImmo.Data.DAL
             {
                 instance = new ImmoContext();
             }
-
-            return instance;
+            Log.Logger.Debug("Connexion à la base de données établie");
+            return instance;            
         }
 
         

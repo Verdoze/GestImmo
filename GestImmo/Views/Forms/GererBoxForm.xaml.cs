@@ -1,5 +1,6 @@
 ﻿using GestImmo.Data.DAL;
 using GestImmo.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace GestImmo.Views.Forms
             
             if (NomBien_TextBox.Text != "" && ValeurBien_TextBox.Text != "" && AdresseBien_TextBox.Text != "" && SurfaceBien_TextBox.Text != "")
             {
+                Log.Logger.Verbose("Entrée dans la fonction de création d'un box");
                 string nom = NomBien_TextBox.Text;
                 int valeur = int.Parse(ValeurBien_TextBox.Text);
                 string adresse = AdresseBien_TextBox.Text;
@@ -43,7 +45,8 @@ namespace GestImmo.Views.Forms
                 ImmoContext ctx = ImmoContext.getInstance();
                 ctx.Bien.Add(unBox);
                 ctx.SaveChanges();
-                MessageBox.Show("Ajouté avec succès !");
+                MessageBox.Show("Ajouté avec succès");
+                Log.Logger.Information("Ajout du box : " + nom + "-" + adresse);
 
             }
             else
