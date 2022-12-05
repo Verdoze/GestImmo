@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj": {}
+    "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj": {}
   },
   "projects": {
-    "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj": {
+    "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
+        "projectUniqueName": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj",
         "projectName": "GestImmo",
-        "projectPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
+        "projectPath": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj",
         "packagesPath": "C:\\Users\\e.caruso\\.nuget\\packages\\",
-        "outputPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\obj\\",
+        "outputPath": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\e.caruso\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -39,44 +39,17 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

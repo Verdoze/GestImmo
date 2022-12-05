@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\Cours SIO\INFO\PROGRAMMATION\C#\Année 2\TP\TP5-WPF\GestImmo\GestImmo\obj\Debug\net6.0-windows\
+F:\Cours SIO\INFO\Cybersec\2emeAnnee\GestImmo\GestImmo\obj\Debug\net6.0-windows\
 GestImmo
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-F:\Cours SIO\INFO\PROGRAMMATION\C#\Année 2\TP\TP5-WPF\GestImmo\GestImmo\App.xaml
+F:\Cours SIO\INFO\Cybersec\2emeAnnee\GestImmo\GestImmo\App.xaml
 11-1292610167
 
 30252151769
-208479119458
+208-421320816
 MainWindow.xaml;Views\BienView.xaml;Views\Forms\GererAppartementForm.xaml;Views\Forms\GererBienForm.xaml;Views\Forms\GererBoxForm.xaml;Views\Forms\GererMaisonForm.xaml;Views\HomeView.xaml;Views\NavigationView.xaml;Views\PrestataireView.xaml;Views\PretView.xaml;Views\SubViews\ListBienView.xaml;
 
 True
