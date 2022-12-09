@@ -50,6 +50,7 @@ namespace GestImmo.Models
         public int Valeur { get => valeur; set => valeur = value; }
         public int Surface { get => surface; set => surface = value; }
         public string Adresse { get => adresse; set => adresse = value; }
+        public Pret Pret { get => pret; set => pret = value; }
         public List<Contrat> ListeContrat { get => listeContrat; set => listeContrat = value; }
         public List<Intervention> ListeIntervention { get => listeIntervention; set => listeIntervention = value; }
 
@@ -61,14 +62,12 @@ namespace GestImmo.Models
             Console.WriteLine("Valeur: " + valeur.ToString() + "euros\r");
             if (listeContrat != null)
             {
-
             }
 
         }
 
         public static Bien ajouterBien()
         {
-
             Console.WriteLine("Saisir le nom du bien:\r");
             string nom = Console.ReadLine();
             Console.WriteLine("Saisir la valeur du bien:\r");
@@ -80,12 +79,9 @@ namespace GestImmo.Models
 
             Bien bien = new Bien(nom, valeur, surface, adresse, null, null, null);
             return bien;
-
         }
-
         public void ajouterPret()
         {
-
         }*/
     }
 }

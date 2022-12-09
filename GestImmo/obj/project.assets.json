@@ -1081,11 +1081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "projectUniqueName": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\GestImmo.csproj",
       "projectName": "GestImmo",
-      "projectPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "projectPath": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\GestImmo.csproj",
       "packagesPath": "C:\\Users\\e.caruso\\.nuget\\packages\\",
-      "outputPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\obj\\",
+      "outputPath": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\e.caruso\\AppData\\Roaming\\NuGet\\NuGet.Config",
