@@ -1,0 +1,59 @@
+﻿<Page x:Class="GestImmo.Views.Forms.GererAppartementForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GestImmo.Views.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="360" d:DesignWidth="400
+      "
+      Title="GererAppartementForm">
+
+    <Grid Margin="15,15,15,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="NomBien_TextBox" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="ValeurBien_TextBox"  Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="AdresseBien_TextBox" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="SurfaceBien_TextBox" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="PiecesBien_TextBox" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="ChambresBien_TextBox"  Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Etage_Textbox" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Ascenseur_TextBox" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Chauffage_TextBox" Grid.Row="8" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Cave_TextBox"  Grid.Row="9" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+        <TextBox x:Name="Parking_TextBox"  Grid.Row="10" Grid.Column="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+
+        <Label x:Name="Lbl_NomBien" Content="Nom"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <Label x:Name="Lbl_ValeurBien" Content="Valeur" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_AdresseBien" Content="Adresse"  Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_SurfaceBien" Content="Surface(m2)" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_NbPieces" Content="Nombre de pièces"  Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_NbChambre" Content="Nombre de chambres" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_EtageAppartement" Content="Etage" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_AscenseurAppartement" Content="Ascenseur" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_ChauffageBien" Content="Chauffage" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_Cave" Content="Cave"  Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"/>
+        <Label x:Name="Lbl_Parking" Content="Place de parking"  Grid.Row="10" Grid.Column="0" VerticalAlignment="Center"/>
+
+        <Button x:Name="Bouton_Ajouter_Bien" Content="Button" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Click="Bouton_Ajouter_Bien_Click"/>
+
+    </Grid>
+</Page>
