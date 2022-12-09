@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BEetxO/8J/7XF6kWs4BYpiaY8pgJN3USVqyWAeJePdzOpJc2wEuE3Ai7oMZCQa6366niZuCA0F9jFwYw8q+S0A==",
+  "dgSpecHash": "EoGlvYNJ9wu8328/VuuUyPf10fbm58qdeTfMfp7wsvdV9lMvZVtJI1MUk+JEhDnMoSenUoIDTgAc23wGWF9iSg==",
   "success": true,
-  "projectFilePath": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj",
+  "projectFilePath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\e.caruso\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\e.caruso\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

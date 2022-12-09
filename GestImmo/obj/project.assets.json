@@ -1206,11 +1206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "projectUniqueName": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
       "projectName": "GestImmo",
-      "projectPath": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "projectPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
       "packagesPath": "C:\\Users\\e.caruso\\.nuget\\packages\\",
-      "outputPath": "F:\\Cours SIO\\INFO\\Cybersec\\2emeAnnee\\GestImmo\\GestImmo\\obj\\",
+      "outputPath": "F:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\e.caruso\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1287,7 +1287,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
