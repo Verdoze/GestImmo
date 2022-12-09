@@ -12,20 +12,20 @@ namespace GestImmo.Models
         private string dateIntervention;
         private int montantTTC;
         private string information;
-        public List<Prestataire> Prestataires { get; set; }
-        public Bien? bien { get; set; }
+        private List<Contrat> contrats { get; set; }
+        private List<Prestataire>? prestataires { get; set; }
+        private Bien? Bien { get; set; }
 
         public Intervention()
         {
 
         }
-        public Intervention(string dateIntervention, int montantTTC, string information, List<Prestataire> listePresta, Bien bien)
+        public Intervention(string dateIntervention, int montantTTC, string information, List<Prestataire> listePresta)
         {
             this.dateIntervention = dateIntervention;
             this.montantTTC = montantTTC;
             this.information = information;
-            this.Prestataires = listePresta;
-            this.bien = bien;   
+            this.prestataires = prestataires;
         }
 
         public string DateIntervention { get => dateIntervention; set => dateIntervention = value; }

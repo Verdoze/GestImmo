@@ -14,7 +14,7 @@ namespace GestImmo.Models
         private string raisonSociale;
         private string telephone;
         private string adresse;
-        public List<Intervention> Interventions { get; set; }
+        private List<Intervention> Interventions { get; set; }
 
         public Prestataire()
         {

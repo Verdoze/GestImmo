@@ -1,8 +1,4 @@
-﻿using GestImmo.Data.DAL;
-using GestImmo.Models;
-using GestImmo.Views.Forms;
-using GestImmo.Views.SubViews;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,19 +19,10 @@ namespace GestImmo.Views.SubViews
     /// Logique d'interaction pour ListBienView.xaml
     /// </summary>
     public partial class ListBienView : Page
-    {   
-        ImmoContext ctx = ImmoContext.getInstance();
-        
+    {
         public ListBienView()
         {
-            InitializeComponent(); 
-            ListBienView_Section.Items.Clear();
-
-
-            foreach (Bien bien in ctx.Bien)
-            {
-                ListBienView_Section.Items.Add(bien.NomBien);
-            }
+            InitializeComponent();
         }
     }
 }

@@ -6,14 +6,4 @@
       xmlns:local="clr-namespace:GestImmo.Views.SubViews"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="400"
-      Title="ListBienView" >
-    
-    <ListView x:Name="ListBienView_Section" d:ItemsSource="{d:SampleData ItemCount=5}">
-        <ListView.View>
-            <GridView>
-                <GridViewColumn/>
-            </GridView>
-        </ListView.View>
-    </ListView>
-
-</Page>
+      Title="ListBienView" Content="Liste des biens à afficher"/>

@@ -26,19 +26,20 @@ namespace GestImmo
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
-            // ligne à ajouter pour la compatibilité des dates
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-
+        {            
             InitializeComponent();
             this.Content = new NavigationView();
 
+            List<Bien> lstBiens = new List<Bien>();
+
             ImmoContext ImmoContext = new ImmoContext();
+
             ImmoContext ctx = ImmoContext.getInstance();
 
-            Pret pret1 = new Pret(100000, 15000, "11/10/2032", 1);
-            ctx.Pret.Add(pret1);
-            ctx.SaveChanges();
+            /*foreach (Bien bien in ctx.Bien)
+            {
+                this.lstBiens.Items.Add(bien.NomBien);
+            }*/
         }
     }
 }

@@ -29,9 +29,7 @@ namespace GestImmo.Models
         public int CoutLoyer { get => coutLoyer; set => coutLoyer = value; }
         public string DateDebut { get => dateDebut; set => dateDebut = value; }
         public string DateFin { get => dateFin; set => dateFin = value; }
-        public List<Locataire> ListeLocataire { get => listeLocataire; set => listeLocataire = value; }
-
-        public Bien Bien { get; set; }
+        internal List<Locataire> ListeLocataire { get => listeLocataire; set => listeLocataire = value; }
 
         public void afficher()
         {

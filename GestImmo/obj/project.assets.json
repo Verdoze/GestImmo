@@ -1076,19 +1076,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\e.caruso\\.nuget\\packages\\": {}
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "projectUniqueName": "D:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
       "projectName": "GestImmo",
-      "projectPath": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\GestImmo.csproj",
-      "packagesPath": "C:\\Users\\e.caruso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\e.caruso\\GestImmo\\GestImmo\\obj\\",
+      "projectPath": "D:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\GestImmo.csproj",
+      "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+      "outputPath": "D:\\Cours SIO\\INFO\\PROGRAMMATION\\C#\\Année 2\\TP\\TP5-WPF\\GestImmo\\GestImmo\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\e.caruso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1150,7 +1155,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

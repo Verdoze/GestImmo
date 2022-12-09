@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GestImmo\\Data",
-    "\\GestImmo\\Views",
-    "\\GestImmo\\Views\\Forms"
+    "\\GestImmo"
   ],
-  "SelectedNode": "\\GestImmo.sln",
+  "SelectedNode": "\\GestImmo\\GestImmo.sln",
   "PreviewInSolutionExplorer": false
 }

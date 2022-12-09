@@ -25,14 +25,18 @@ namespace GestImmo.Views
         public BienView()
         {
             InitializeComponent();
-            this.Frame_Consulter_Bien.Navigate(new ListBienView());
+            ListBienView BienView = new ListBienView();
+            this.Consulter_Bien.Navigate(BienView);
             this.Ajouter_Bien.Navigate(new GererBienForm());
 
         }
 
+        private void Frame_Navigated_1(object sender, NavigationEventArgs e)
+        {
+        }
+
         private void Frame_Navigated(object sender, NavigationEventArgs e)
         {
-            this.Frame_Consulter_Bien.Navigate(new ListBienView());
         }
     }
 }

@@ -27,6 +27,10 @@ namespace GestImmo.Models
             this.parking = parking;
         }
 
+        public Logement(string nomBien, int valeur, int surface, string adresse, Pret pret, List<Contrat> listeContrat, int nbPiece, int nbChambre, int cave, int parking) : base(nomBien, valeur, surface, adresse, pret, listeContrat)
+        {
+        }
+
         public int NbPiece { get => nbPiece; set => nbPiece = value; }
         public int NbChambre { get => nbChambre; set => nbChambre = value; }
         public int Cave { get => cave; set => cave = value; }

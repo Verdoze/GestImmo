@@ -8,18 +8,13 @@ namespace GestImmo.Data.DAL
     public class ImmoContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=GestImmo;Username=postgres;Password=SmvTmjsunp7");
+        => optionsBuilder.UseNpgsql("Host=localhost;Database=GestImmo;Username=postgres;Password=root");
 
         public DbSet<Contrat> Contrat { get; set; }
-
         public DbSet<Bien> Bien { get; set; }
-
         public DbSet<Intervention> Intervention { get; set; }
-
         public DbSet<Locataire> Locataire { get; set; }
-
         public DbSet<Prestataire> Prestataire { get; set; }
-
         public DbSet<Pret> Pret { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
